@@ -1,8 +1,8 @@
-# React + Vite
+Live Link: https://bangla-restaurant.web.app/
+Server Link: https://bangla-restaurant-server.vercel.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+github client:https://github.com/arifin1987/bangla-restaurant-client
+github server:https://github.com/arifin1987/bangla-restaurant-server
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+login email: sakib@gmail.com
+password: 123456

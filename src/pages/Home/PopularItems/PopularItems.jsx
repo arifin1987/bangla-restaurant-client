@@ -5,7 +5,7 @@ import SingleItems from "./SingleItems";
 const PopularItems = () => {
     const[items,setItems] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/popularItems')
+        fetch('https://bangla-restaurant-server.vercel.app/popularItems')
         .then(res => res.json())
         .then(data => setItems(data))
     },[])

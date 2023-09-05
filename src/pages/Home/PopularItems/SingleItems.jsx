@@ -21,7 +21,7 @@ const SingleItems = ({item}) => {
             const cartItem ={cartId:_id,image,price,name,email:user.email}
             console.log(cartItem);
         
-        fetch('http://localhost:5000/carts',{
+        fetch('https://bangla-restaurant-server.vercel.app/carts',{
             method:'POST',
             headers:{
                 'content-type':'application/json'

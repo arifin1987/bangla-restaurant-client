@@ -1,13 +1,35 @@
 import { Link } from "react-router-dom";
+import { FaShoppingCart, FaHome } from "react-icons/fa";
+import useCart from "../../../hooks/useCart";
+import { useContext } from "react";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 
-const Navbar = () => {
-  const navOptions = <>
-  <li><Link>Home</Link></li>
-  <li><Link>Cart</Link></li>
-  
-  
-  </>
+const NavBar = () => {
+  const [cart] = useCart();
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+      .then(() => { })
+      .catch(error => console.log(error));
+  }
+    const navOptions = <>
+    <li className="mx-2 font-semibold"><Link to='/'><FaHome></FaHome>Home</Link></li>
+    
+    <li className="font-bold mx-4"><Link to="/carts"><FaShoppingCart></FaShoppingCart>Cart<div className="badge badge-secondary">+{cart?.length || 0}</div></Link></li>
+    
+    {
+      user ? <>
+          <button onClick={handleLogOut} className="btn btn-ghost">LogOut</button>
+      </> : <>
+          <li><Link to="/login"> Login</Link></li>
+      </>
+  }
+    
+    
+    
+    </>
+    
     return (
         <div className="navbar bg-base-100">
         <div className="navbar-start">
@@ -19,11 +41,12 @@ const Navbar = () => {
               {navOptions}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">Bangla Restaurant</a>
+          <Link to='/' className="btn btn-ghost normal-case text-xl">MyShop</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             {navOptions}
+            
           </ul>
         </div>
         
@@ -31,4 +54,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default NavBar;
